@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StopShopDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="StopShopDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlogMasters" EntityType="StopShopDBModel.BlogMaster" />
+    <EntitySet Name="BlogThreads" EntityType="StopShopDBModel.BlogThread" />
+    <EntitySet Name="CategoryMasters" EntityType="StopShopDBModel.CategoryMaster" />
+    <EntitySet Name="ReferenceSitesMasters" EntityType="StopShopDBModel.ReferenceSitesMaster" />
+    <EntitySet Name="SubCategoryMasters" EntityType="StopShopDBModel.SubCategoryMaster" />
+    <EntitySet Name="Users" EntityType="StopShopDBModel.User" />
+    <AssociationSet Name="FK_BlogMaster_CategoryMaster" Association="StopShopDBModel.FK_BlogMaster_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMasters" />
+      <End Role="BlogMaster" EntitySet="BlogMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogMaster_User" Association="StopShopDBModel.FK_BlogMaster_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BlogMaster" EntitySet="BlogMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogThread_BlogMaster" Association="StopShopDBModel.FK_BlogThread_BlogMaster">
+      <End Role="BlogMaster" EntitySet="BlogMasters" />
+      <End Role="BlogThread" EntitySet="BlogThreads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BlogThread_User" Association="StopShopDBModel.FK_BlogThread_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="BlogThread" EntitySet="BlogThreads" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReferenceSitesMaster_CategoryMaster" Association="StopShopDBModel.FK_ReferenceSitesMaster_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMasters" />
+      <End Role="ReferenceSitesMaster" EntitySet="ReferenceSitesMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubCategoryMaster_CategoryMaster" Association="StopShopDBModel.FK_SubCategoryMaster_CategoryMaster">
+      <End Role="CategoryMaster" EntitySet="CategoryMasters" />
+      <End Role="SubCategoryMaster" EntitySet="SubCategoryMasters" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="BlogMaster">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="CategoryMaster" Relationship="StopShopDBModel.FK_BlogMaster_CategoryMaster" FromRole="BlogMaster" ToRole="CategoryMaster" />
+    <NavigationProperty Name="User" Relationship="StopShopDBModel.FK_BlogMaster_User" FromRole="BlogMaster" ToRole="User" />
+    <NavigationProperty Name="BlogThreads" Relationship="StopShopDBModel.FK_BlogThread_BlogMaster" FromRole="BlogMaster" ToRole="BlogThread" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="BlogThread">
+    <Key>
+      <PropertyRef Name="BlogThreadId" />
+    </Key>
+    <Property Name="BlogThreadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BlogId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="DateTime" Type="DateTime" Nullable="false" />
+    <NavigationProperty Name="BlogMaster" Relationship="StopShopDBModel.FK_BlogThread_BlogMaster" FromRole="BlogThread" ToRole="BlogMaster" />
+    <NavigationProperty Name="User" Relationship="StopShopDBModel.FK_BlogThread_User" FromRole="BlogThread" ToRole="User" />
+    <Property Type="String" Name="UserName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="PhotoURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="BlogMasters" Relationship="StopShopDBModel.FK_BlogMaster_CategoryMaster" FromRole="CategoryMaster" ToRole="BlogMaster" />
+    <NavigationProperty Name="ReferenceSitesMasters" Relationship="StopShopDBModel.FK_ReferenceSitesMaster_CategoryMaster" FromRole="CategoryMaster" ToRole="ReferenceSitesMaster" />
+    <NavigationProperty Name="SubCategoryMasters" Relationship="StopShopDBModel.FK_SubCategoryMaster_CategoryMaster" FromRole="CategoryMaster" ToRole="SubCategoryMaster" />
+  </EntityType>
+  <EntityType Name="ReferenceSitesMaster">
+    <Key>
+      <PropertyRef Name="ReferenceSitesId" />
+    </Key>
+    <Property Name="ReferenceSitesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="URL" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMaster" Relationship="StopShopDBModel.FK_ReferenceSitesMaster_CategoryMaster" FromRole="ReferenceSitesMaster" ToRole="CategoryMaster" />
+  </EntityType>
+  <EntityType Name="SubCategoryMaster">
+    <Key>
+      <PropertyRef Name="SubCategoryId" />
+    </Key>
+    <Property Name="SubCategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="PhotoURL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="CategoryMaster" Relationship="StopShopDBModel.FK_SubCategoryMaster_CategoryMaster" FromRole="SubCategoryMaster" ToRole="CategoryMaster" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EmailId" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="BlogMasters" Relationship="StopShopDBModel.FK_BlogMaster_User" FromRole="User" ToRole="BlogMaster" />
+    <NavigationProperty Name="BlogThreads" Relationship="StopShopDBModel.FK_BlogThread_User" FromRole="User" ToRole="BlogThread" />
+  </EntityType>
+  <Association Name="FK_BlogMaster_CategoryMaster">
+    <End Role="CategoryMaster" Type="StopShopDBModel.CategoryMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BlogMaster" Type="StopShopDBModel.BlogMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="BlogMaster">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogMaster_User">
+    <End Role="User" Type="StopShopDBModel.User" Multiplicity="1" />
+    <End Role="BlogMaster" Type="StopShopDBModel.BlogMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BlogMaster">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogThread_BlogMaster">
+    <End Role="BlogMaster" Type="StopShopDBModel.BlogMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BlogThread" Type="StopShopDBModel.BlogThread" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BlogMaster">
+        <PropertyRef Name="BlogId" />
+      </Principal>
+      <Dependent Role="BlogThread">
+        <PropertyRef Name="BlogId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BlogThread_User">
+    <End Role="User" Type="StopShopDBModel.User" Multiplicity="1" />
+    <End Role="BlogThread" Type="StopShopDBModel.BlogThread" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="BlogThread">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReferenceSitesMaster_CategoryMaster">
+    <End Role="CategoryMaster" Type="StopShopDBModel.CategoryMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ReferenceSitesMaster" Type="StopShopDBModel.ReferenceSitesMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="ReferenceSitesMaster">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubCategoryMaster_CategoryMaster">
+    <End Role="CategoryMaster" Type="StopShopDBModel.CategoryMaster" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SubCategoryMaster" Type="StopShopDBModel.SubCategoryMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Principal>
+      <Dependent Role="SubCategoryMaster">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

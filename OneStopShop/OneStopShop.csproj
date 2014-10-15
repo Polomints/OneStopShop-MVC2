@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{98A2CB5A-9563-438C-B6E4-0B34E77A828F}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OneStopShop</RootNamespace>
+    <AssemblyName>OneStopShop</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlogManagerController.cs" />
+    <Compile Include="Controllers\BlogThreadManagerController.csController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryManagerController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ReferenceSitesManagerController.cs" />
+    <Compile Include="Controllers\SubCategoryManagerController.cs" />
+    <Compile Include="Controllers\UserManagerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryMaster.cs" />
+    <Compile Include="Models\ReferenceSitesMaster.cs" />
+    <Compile Include="Models\StopShopDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StopShopDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SubCategory.cs" />
+    <Compile Include="Models\SubCategoryMaster.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\BlogManagerViewModel.cs" />
+    <Compile Include="ViewModels\BlogThreadManagerViewModel.cs" />
+    <Compile Include="ViewModels\CategoryBrowseViewModel.cs" />
+    <Compile Include="ViewModels\CategoryIndexViewModel.cs" />
+    <Compile Include="ViewModels\ReferenceSitesManagerViewModel.cs" />
+    <Compile Include="ViewModels\SubCategoryManagerViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\OneStopShop.mdf" />
+    <Content Include="App_Data\OneStopShop_log.ldf">
+      <DependentUpon>OneStopShop.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\eye.js" />
+    <Content Include="Content\Images\045341A.jpg" />
+    <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\ajax_small.gif" />
+    <Content Include="Content\Images\castle.jpg" />
+    <Content Include="Content\Images\certus.jpg" />
+    <Content Include="Content\Images\college_standard.jpg" />
+    <Content Include="Content\Images\concerts.jpg" />
+    <Content Include="Content\Images\cyl%281%29.jpg" />
+    <Content Include="Content\Images\dart.jpg" />
+    <Content Include="Content\Images\Dublin-spire.jpg" />
+    <Content Include="Content\Images\dublin17park.jpg" />
+    <Content Include="Content\Images\dublinbus2.jpg" />
+    <Content Include="Content\Images\educe.jpg" />
+    <Content Include="Content\Images\entrance-to-dublin-zoo.jpg" />
+    <Content Include="Content\Images\events.jpg.gif" />
+    <Content Include="Content\Images\exhibitions.jpg" />
+    <Content Include="Content\Images\festivals.jpg" />
+    <Content Include="Content\Images\gallery\1.jpg" />
+    <Content Include="Content\Images\gallery\10.jpg" />
+    <Content Include="Content\Images\gallery\11.jpg" />
+    <Content Include="Content\Images\gallery\12.jpg" />
+    <Content Include="Content\Images\gallery\13.jpg" />
+    <Content Include="Content\Images\gallery\14.jpg" />
+    <Content Include="Content\Images\gallery\15.jpg" />
+    <Content Include="Content\Images\gallery\16.jpg" />
+    <Content Include="Content\Images\gallery\17.jpg" />
+    <Content Include="Content\Images\gallery\18.jpg" />
+    <Content Include="Content\Images\gallery\19.jpg" />
+    <Content Include="Content\Images\gallery\2.jpg" />
+    <Content Include="Content\Images\gallery\20.jpg" />
+    <Content Include="Content\Images\gallery\3.jpg" />
+    <Content Include="Content\Images\gallery\4.jpg" />
+    <Content Include="Content\Images\gallery\5.jpg" />
+    <Content Include="Content\Images\gallery\6.jpg" />
+    <Content Include="Content\Images\gallery\7.jpg" />
+    <Content Include="Content\Images\gallery\8.jpg" />
+    <Content Include="Content\Images\gallery\9.jpg" />
+    <Content Include="Content\Images\gallery\s1.jpg" />
+    <Content Include="Content\Images\gallery\s10.jpg" />
+    <Content Include="Content\Images\gallery\s11.jpg" />
+    <Content Include="Content\Images\gallery\s12.jpg" />
+    <Content Include="Content\Images\gallery\s13.jpg" />
+    <Content Include="Content\Images\gallery\s14.jpg" />
+    <Content Include="Content\Images\gallery\s15.jpg" />
+    <Content Include="Content\Images\gallery\s16.jpg" />
+    <Content Include="Content\Images\gallery\s17.jpg" />
+    <Content Include="Content\Images\gallery\s18.jpg" />
+    <Content Include="Content\Images\gallery\s19.jpg" />
+    <Content Include="Content\Images\gallery\s2.jpg" />
+    <Content Include="Content\Images\gallery\s20.jpg" />
+    <Content Include="Content\Images\gallery\s3.jpg" />
+    <Content Include="Content\Images\gallery\s4.jpg" />
+    <Content Include="Content\Images\gallery\s5.jpg" />
+    <Content Include="Content\Images\gallery\s6.jpg" />
+    <Content Include="Content\Images\gallery\s7.jpg" />
+    <Content Include="Content\Images\gallery\s8.jpg" />
+    <Content Include="Content\Images\gallery\s9.jpg" />
+    <Content Include="Content\Images\Guinness-Storehouse.jpg" />
+    <Content Include="Content\Images\Hazel complex.png" />
+    <Content Include="Content\Images\kellogs.jpg" />
+    <Content Include="Content\Images\legal_sm.jpg" />
+    <Content Include="Content\Images\luas.jpg" />
+    <Content Include="Content\Images\luas1.jpg" />
+    <Content Include="Content\Images\main.jpg" />
+    <Content Include="Content\Images\mcafee.jpg" />
+    <Content Include="Content\Images\monadel.jpg" />
+    <Content Include="Content\Images\o-driscoll-s-b-b-main.jpg" />
+    <Content Include="Content\Images\one_114_4670.jpg" />
+    <Content Include="Content\Images\phoenix park.jpg" />
+    <Content Include="Content\Images\Prospectus2010.JPG" />
+    <Content Include="Content\Images\shadow-lr.png" />
+    <Content Include="Content\Images\shadow.png" />
+    <Content Include="Content\Images\site\bg.png" />
+    <Content Include="Content\Images\site\facebook.png" />
+    <Content Include="Content\Images\site\footer.png" />
+    <Content Include="Content\Images\site\nav-active.gif" />
+    <Content Include="Content\Images\site\navigation.png" />
+    <Content Include="Content\Images\site\OneStopLogo.png" />
+    <Content Include="Content\Images\site\search-button.gif" />
+    <Content Include="Content\Images\site\search-field.gif" />
+    <Content Include="Content\Images\site\twit.png" />
+    <Content Include="Content\Images\site\yelp.png" />
+    <Content Include="Content\Images\site\youtube.png" />
+    <Content Include="Content\Images\soursedogg.jpg" />
+    <Content Include="Content\Images\style\FaceBook_32x32.png" />
+    <Content Include="Content\Images\style\Hapenny.jpg" />
+    <Content Include="Content\Images\style\logo3.png" />
+    <Content Include="Content\Images\style\Twitter_32x32.png" />
+    <Content Include="Content\Images\style\Youtube_32x32.png" />
+    <Content Include="Content\Images\taxi.jpg" />
+    <Content Include="Content\Images\transport.gif" />
+    <Content Include="Content\Images\UL Logo.gif" />
+    <Content Include="Content\Images\zoomimage_next.gif" />
+    <Content Include="Content\Images\zoomimage_prev.gif" />
+    <Content Include="Content\Images\zoomin.cur" />
+    <Content Include="Content\Images\zoomout.cur" />
+    <Content Include="Content\jquery.js" />
+    <Content Include="Content\layout.js" />
+    <Content Include="Content\New.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\utils.js" />
+    <Content Include="Content\zoomimage.css" />
+    <Content Include="Content\zoomimage.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\BlogManager\Create.aspx" />
+    <Content Include="Views\BlogManager\Index.aspx" />
+    <Content Include="Views\BlogThreadManager\Create.aspx" />
+    <Content Include="Views\BlogThreadManager\Index.aspx" />
+    <Content Include="Views\CategoryManager\Create.aspx" />
+    <Content Include="Views\CategoryManager\Delete.aspx" />
+    <Content Include="Views\CategoryManager\Deleted.aspx" />
+    <Content Include="Views\CategoryManager\Edit.aspx" />
+    <Content Include="Views\CategoryManager\Index.aspx" />
+    <Content Include="Views\Category\Blog.aspx" />
+    <Content Include="Views\Category\Blogs.aspx" />
+    <Content Include="Views\Category\Browse.aspx" />
+    <Content Include="Views\Category\CategoryMenu.ascx" />
+    <Content Include="Views\Category\Index.aspx" />
+    <Content Include="Views\Category\SubCategory.aspx" />
+    <Content Include="Views\Home\Contact.aspx" />
+    <Content Include="Views\Home\Gallery.aspx" />
+    <Content Include="Views\ReferenceSitesManager\Create.aspx" />
+    <Content Include="Views\ReferenceSitesManager\Delete.aspx" />
+    <Content Include="Views\ReferenceSitesManager\Deleted.aspx" />
+    <Content Include="Views\ReferenceSitesManager\Edit.aspx" />
+    <Content Include="Views\ReferenceSitesManager\Index.aspx" />
+    <Content Include="Views\Shared\EditorTemplates\BlogMaster.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\BlogThread.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\CategoryMaster.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\ReferenceSitesMaster.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\SubCategoryMaster.ascx" />
+    <Content Include="Views\Shared\EditorTemplates\User.ascx" />
+    <Content Include="Views\SubCategoryManager\Create.aspx" />
+    <Content Include="Views\SubCategoryManager\Delete.aspx" />
+    <Content Include="Views\SubCategoryManager\Deleted.aspx" />
+    <Content Include="Views\SubCategoryManager\Edit.aspx" />
+    <Content Include="Views\SubCategoryManager\Index.aspx" />
+    <Content Include="Views\UserManager\Create.aspx" />
+    <Content Include="Views\UserManager\Delete.aspx" />
+    <Content Include="Views\UserManager\Deleted.aspx" />
+    <Content Include="Views\UserManager\Edit.aspx" />
+    <Content Include="Views\UserManager\Index.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Models\StopShopDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>StopShopDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65027</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

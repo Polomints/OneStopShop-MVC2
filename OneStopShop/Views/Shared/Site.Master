@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title><asp:ContentPlaceHolder ID="TitleContent" runat="server" /></title>
+   <script type="text/javascript">
+       function googleTranslateElementInit() {
+           new google.translate.TranslateElement({
+               pageLanguage: 'en',
+               layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+           }, 'google_translate_element');
+       }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <link href="../../Content/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+    <div id="page" class="shell">
+	<!-- Logo + Search + Navigation -->
+	<div id="top">
+		<div class="cl">&nbsp;</div>
+		<h1 id="logo"><a href="#">OneStop</a></h1>
+		
+			<div class="field-holder" style="float:right;">
+				<div id="google_translate_element"></div>
+                <div id="logindisplay">
+                    <% Html.RenderPartial("LogOnUserControl"); %>
+                </div>
+			</div>
+			
+			<div class="cl">&nbsp;</div>
+		
+		<div class="cl">&nbsp;</div>
+		<div id="navigation">
+			<ul>
+			    <li><a href="#"><%: Html.ActionLink("Home", "Index", "Home")%></a></li>
+			    <li><a href="#"><span><%: Html.ActionLink("About Us", "About", "Home")%></span></a></li>
+			    <li><a href="#"><span><%: Html.ActionLink("Blogs", "Blogs", "Category")%></span></a></li>
+			    <li><a href="#"><span><%: Html.ActionLink("gallery", "Gallery", "Home")%></span></a></li>
+			    <li><a href="#"><span><%: Html.ActionLink("contact", "Contact", "Home")%></span></a></li>
+				<a href="#"><span><img alt="" src="/content/images/site/youtube.png" /></span></a>
+				<a href="#"><span><img alt="" src="/content/images/site/facebook.png" /></span></a>
+				<a href="#"><span><img alt="" src="/content/images/site/yelp.png" /></span></a>
+
+			</ul>
+		</div>	
+	</div>
+	<!-- END Logo + Search + Navigation -->
+	<!-- Header -->
+	<div id="header">
+		
+	<!-- END Header -->
+	<!-- Main -->
+	<div id="main">
+		<!-- Three Column Content -->
+		<div class="cols three-cols">
+			<div class="cl">&nbsp;</div>
+		  <div class="col">
+
+		    <% Html.RenderAction("CategoryMenu", "Category"); %>
+
+		    <h2>&nbsp;</h2>
+		  </div>
+		  		<div class="cols three-cols2">
+		  		  <div class="col">
+		  		    <table width="598" height="400" border="1" cellpadding="2px">
+                  <tr>
+                    <td width="588" height="394" bgcolor="3fc2ed" scope="row" style="padding:10px;" valign="top">
+                        <% if (Request.IsAuthenticated && Page.User.Identity.Name == "Diamond")
+                               { %>
+                           
+                            <ul id="menu">              
+                                <li>Manager >></li>
+                                <li><%: Html.ActionLink("Category ", "Index", "CategoryManager")%></li>
+                                <li><%: Html.ActionLink("Sub Category ", "Index", "SubCategoryManager")%></li>
+                                <li><%: Html.ActionLink("Reference Sites ", "Index", "ReferenceSitesManager")%></li>
+                                <li><%: Html.ActionLink("User ", "Index", "UserManager")%></li>
+                                <li><%: Html.ActionLink("Blog ", "Index", "BlogManager")%></li>
+                                <li><%: Html.ActionLink("Blog Thread ", "Index", "BlogThreadManager")%></li>
+                            </ul>
+                          <br /><br /><br /><br />
+                        <% } %>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </td>
+                  </tr>
+                </table>
+		  </div>
+		  	<div class="cols three-cols3">
+			<div class="col col-last">
+				<table width="180" height="400" border="1">
+                  <tr>
+                    <td width="198" height="125" bgcolor="3fc2ed" scope="row">
+                        <img alt="Add" src="/Content/Images/cyl(1).jpg" width="198" height="123" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="198" height="125" bgcolor="3fc2ed" scope="row">
+                        <img alt="Add" src="/Content/Images/Prospectus2010.JPG" width="198" height="123" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td width="198" height="125" bgcolor="3fc2ed" scope="row">
+                        <img alt="Add" src="/Content/Images/UL Logo.gif" width="198" height="123" />
+                    </td>
+                  </tr>
+              </table>
+				<h2>&nbsp;</h2>
+			  </div>
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- END Three Column Content -->
+		<!-- Two Column Content -->
+		<div class="cols two-cols">
+			<div class="cl">&nbsp;</div>
+			<div class="cl">&nbsp;</div>
+		</div>
+		<!-- END Two Column Content -->
+	</div>
+	<!-- END Main -->
+	<!-- Footer -->
+	<div id="footer">
+		<p class="right">&copy; 2012 - OneStop &nbsp; Design by <a href="http://ncirl.ie" target="_blank" >Harsh/Paul</a></p>
+		<p><a href="#">Privacy Policy </a><span>&nbsp;</span><a href="#">Disclaimer</a><span>&nbsp;</span><a href="#">Accessibility</a><span>&nbsp;</span><a href="#">Contact us </a></p>
+		<div class="cl">&nbsp;</div>
+	</div>
+	<!-- END Footer -->
+	<br />
+</div>
+    
+</body>
+</html>

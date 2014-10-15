@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ShopModelStoreContainer">
+    <EntitySet Name="BlogMaster" EntityType="ShopModel.Store.BlogMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="BlogThread" EntityType="ShopModel.Store.BlogThread" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CategoryMaster" EntityType="ShopModel.Store.CategoryMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PhotosMaster" EntityType="ShopModel.Store.PhotosMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReferenceSitesMaster" EntityType="ShopModel.Store.ReferenceSitesMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SubCategoryMaster" EntityType="ShopModel.Store.SubCategoryMaster" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="ShopModel.Store.User" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="BlogMaster">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BlogThread">
+    <Key>
+      <PropertyRef Name="BlogThreadId" />
+    </Key>
+    <Property Name="BlogThreadId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BlogId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="DateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CategoryMaster">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PhotoId" Type="int" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="PhotosMaster">
+    <Key>
+      <PropertyRef Name="PhotoId" />
+    </Key>
+    <Property Name="PhotoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="URL" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="ReferenceSitesMaster">
+    <Key>
+      <PropertyRef Name="ReferenceSitesId" />
+    </Key>
+    <Property Name="ReferenceSitesId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="URL" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="SubCategoryMaster">
+    <Key>
+      <PropertyRef Name="SubCategoryId" />
+    </Key>
+    <Property Name="SubCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="PhotoId" Type="int" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+</Schema>

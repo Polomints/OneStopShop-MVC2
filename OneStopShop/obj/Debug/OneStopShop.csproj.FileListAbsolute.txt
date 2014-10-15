@@ -1,0 +1,5 @@
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop\bin\OneStopShop.dll
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop\bin\OneStopShop.pdb
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop\obj\Debug\ResolveAssemblyReference.cache
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop\obj\Debug\OneStopShop.dll
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop\obj\Debug\OneStopShop.pdb

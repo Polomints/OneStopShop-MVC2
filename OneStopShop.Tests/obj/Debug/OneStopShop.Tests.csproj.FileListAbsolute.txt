@@ -1,0 +1,8 @@
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\bin\Debug\OneStopShop.Tests.dll.config
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\bin\Debug\OneStopShop.Tests.dll
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\bin\Debug\OneStopShop.Tests.pdb
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\bin\Debug\OneStopShop.dll
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\bin\Debug\OneStopShop.pdb
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\obj\Debug\ResolveAssemblyReference.cache
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\obj\Debug\OneStopShop.Tests.dll
+c:\users\harsh\documents\visual studio 2010\Projects\OneStopShop\OneStopShop.Tests\obj\Debug\OneStopShop.Tests.pdb
